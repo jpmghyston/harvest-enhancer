@@ -1,8 +1,12 @@
-# Chrome Extension TypeScript Starter
+# Harvest Enhancer
 
-![build](https://github.com/chibat/chrome-extension-typescript-starter/workflows/build/badge.svg)
+An extension for Harvest that helps you if you bill your customers in days.
 
-Chrome Extension, TypeScript and Visual Studio Code
+Currently includes the following functionality:
+* Button to convert days to hours when filling in timesheet
+* Show number of days spent per task on project summary page
+* Show daily rate as well as hourly rate on project edit page
+* Convert hours to days (and hourly rate to daily rate) when creating an invoice
 
 ## Prerequisites
 

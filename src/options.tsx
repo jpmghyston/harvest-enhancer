@@ -38,7 +38,12 @@ const Options = () => {
   return (
     <>
       <div>
-        Hours per day: <input type="number" value={hoursPerDay} onChange={(e) => setHoursPerDay(Number(e.target.value))} />
+        Hours per day:{" "}
+        <input
+          type="number"
+          value={hoursPerDay}
+          onChange={(e) => setHoursPerDay(Number(e.target.value))}
+        />
       </div>
       <div>{status}</div>
       <button onClick={saveOptions}>Save</button>
