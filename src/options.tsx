@@ -2,21 +2,18 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
 const Options = () => {
-  const [color, setColor] = useState<string>("");
+  const [hoursPerDay, setHoursPerDay] = useState<number>(0);
   const [status, setStatus] = useState<string>("");
-  const [like, setLike] = useState<boolean>(false);
 
   useEffect(() => {
     // Restores select box and checkbox state using the preferences
     // stored in chrome.storage.
     chrome.storage.sync.get(
       {
-        favoriteColor: "red",
-        likesColor: true,
+        hoursPerDay: 7.5,
       },
       (items) => {
-        setColor(items.favoriteColor);
-        setLike(items.likesColor);
+        setHoursPerDay(items.hoursPerDay);
       }
     );
   }, []);
@@ -25,8 +22,7 @@ const Options = () => {
     // Saves options to chrome.storage.sync.
     chrome.storage.sync.set(
       {
-        favoriteColor: color,
-        likesColor: like,
+        hoursPerDay: hoursPerDay,
       },
       () => {
         // Update status to let user know options were saved.
@@ -42,25 +38,7 @@ const Options = () => {
   return (
     <>
       <div>
-        Favorite color: <select
-          value={color}
-          onChange={(event) => setColor(event.target.value)}
-        >
-          <option value="red">red</option>
-          <option value="green">green</option>
-          <option value="blue">blue</option>
-          <option value="yellow">yellow</option>
-        </select>
-      </div>
-      <div>
-        <label>
-          <input
-            type="checkbox"
-            checked={like}
-            onChange={(event) => setLike(event.target.checked)}
-          />
-          I like colors.
-        </label>
+        Hours per day: <input type="number" value={hoursPerDay} onChange={(e) => setHoursPerDay(Number(e.target.value))} />
       </div>
       <div>{status}</div>
       <button onClick={saveOptions}>Save</button>
