@@ -89,14 +89,17 @@ const createUpdateDailyRatesObserver = function () {
 
 function addTrackedHoursToDays() {
   // Add days header, if it doesn't already exist
-  const tableHeader = document.querySelector("table.project-analysis-table-breakdown tbody tr.tbody-head");
-  const daysHeader = document.createElement("th");
-  const daysHeaderClassName = "days-header";
-  daysHeader.className = daysHeaderClassName;
-  daysHeader.innerText = "Days";
-  if (!tableHeader?.querySelector(`th.${daysHeaderClassName}`)) {
-    tableHeader?.appendChild(daysHeader);
-  }
+  const tableHeaders = document.querySelectorAll("table.project-analysis-table-breakdown tbody tr.tbody-head");
+  tableHeaders.forEach(tableHeader => {
+    const daysHeader = document.createElement("th");
+    const daysHeaderClassName = "days-header";
+    daysHeader.className = daysHeaderClassName;
+    daysHeader.innerText = "Days";
+    if (!tableHeader?.querySelector(`th.${daysHeaderClassName}`)) {
+      tableHeader?.appendChild(daysHeader);
+    }
+  })
+
 
   // Add days cells
   const taskRows = Array.from(document.querySelectorAll("table.project-analysis-table-breakdown tbody tr")).filter(row => row.className.indexOf("tbody-head") === -1);
