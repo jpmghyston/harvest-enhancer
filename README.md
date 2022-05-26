@@ -1,6 +1,6 @@
 # Harvest Enhancer
 
-An extension for Harvest that helps you if you bill your customers in days.
+An extension for Harvest that helps you if you bill your customers in days rather than hours.
 
 Currently includes the following functionality:
 * Button to convert days to hours when filling in timesheet
@@ -12,37 +12,17 @@ Currently includes the following functionality:
 
 * [node + npm](https://nodejs.org/) (Current Version)
 
-## Option
+## Development environment
 
 * [Visual Studio Code](https://code.visualstudio.com/)
-
-## Includes the following
-
-* TypeScript
-* Webpack
-* React
-* Jest
-* Example Code
-    * Chrome Storage
-    * Options Version 2
-    * content script
-    * count up badge number
-    * background
-
-## Project Structure
-
-* src/typescript: TypeScript source files
-* src/assets: static files
-* dist: Chrome Extension directory
-* dist/js: Generated JavaScript files
+* Or: [Webstorm](https://www.jetbrains.com/webstorm/)
+* Or any JS IDE
 
 ## Setup
 
 ```
 npm install
 ```
-
-## Import as Visual Studio Code project
 
 ...
 
@@ -59,12 +39,6 @@ npm run build
 ```
 npm run watch
 ```
-
-### Visual Studio Code
-
-Run watch mode.
-
-type `Ctrl + Shift + B`
 
 ## Load extension to chrome
 
