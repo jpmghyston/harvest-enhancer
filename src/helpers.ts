@@ -1,5 +1,3 @@
-import { MutationSummary, Summary } from "mutation-summary";
-
 export const hoursToHourMinuteString = (hours: number): string => {
   const hour = Math.floor(hours);
   const minute = Math.round((hours - hour) * 60);
@@ -20,17 +18,3 @@ export const addOrReplaceChildElementByClassName = (
     parent.appendChild(newChild);
   }
 }
-export const doOnPageChange = function(callback: () => void) {
-  new MutationSummary({
-    callback(summaries: Summary[]) {
-      summaries.forEach((summary: Summary) => {
-        // @ts-ignore
-        if (summary.added.length > 0) {
-          callback();
-        }
-        console.log(summary);
-      });
-    },
-    queries: [{ all: true }]
-  });
-};
