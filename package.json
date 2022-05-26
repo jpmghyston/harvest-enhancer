@@ -10,11 +10,11 @@
     "test": "npx jest",
     "style": "prettier --write \"src/**/*.{ts,tsx}\""
   },
-  "author": "",
+  "author": "Jake McKenna",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/chibat/chrome-extension-typescript-starter.git"
+    "url": "https://github.com/jpmghyston/harvest-enhancer"
   },
   "dependencies": {
     "mutation-summary": "^1.0.0",

@@ -1,5 +1,4 @@
 button.convert-hours-button {
-    position: absolute;
-    top: 100px;
-    left: 20px;
+    margin-top: 0.5em;
+    background-color: lightgreen;
 }

@@ -24,11 +24,6 @@ const convertToHours = function () {
     });
   // @ts-ignore
   setTimeout(() => document.querySelector("button.js-save").click(), 100);
-  // @ts-ignore
-  setTimeout(
-    () => document.querySelector("button.js-close-modal").click(),
-    300
-  );
 };
 
 function createConvertToHoursButton() {
@@ -36,7 +31,7 @@ function createConvertToHoursButton() {
   convertToHoursButton.onclick = convertToHours;
   convertToHoursButton.innerText = "Convert to hours";
   convertToHoursButton.className = "pds-button convert-hours-button";
-  document.body.appendChild(convertToHoursButton);
+  document.querySelector("div.main-nav-legacy nav ul")?.appendChild(convertToHoursButton);
 }
 
 function addOrReplaceChildElementByClassName(
@@ -199,7 +194,7 @@ function createUpdateInvoiceButton() {
   updateInvoiceButton.onclick = updateInvoice;
   updateInvoiceButton.innerText = "Update hours to days";
   updateInvoiceButton.className = "pds-button convert-hours-button";
-  document.body.appendChild(updateInvoiceButton);
+  document.querySelector("div.main-nav-legacy nav ul")?.appendChild(updateInvoiceButton);
 }
 
 const projectEditPageRegex = /\/projects\/[0-9]+\/edit.*/;
