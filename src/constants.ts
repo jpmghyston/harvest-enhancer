@@ -1,0 +1,1 @@
+export const hoursInADay = 7.5;
